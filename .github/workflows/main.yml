@@ -42,6 +42,11 @@ jobs:
         with:
           node-version: '18'
 
+      # Instalar Jest
+      - name: Install Jest
+        run: npm install jest
+        working-directory: ./aula_02-10
+
       # Correr todos os testes automáticos
       - name: Run tests
         run: npm test
