@@ -47,6 +47,15 @@ jobs:
         run: npm test
         working-directory: ./aula_02-10
 
+       - name: Upload coverage to Codecov
+        uses: codecov/codecov-action@v2
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          files: ./aula_02-10/coverage/*.json
+          flags: unittests
+          name: codecov-umbrella
+          fail_ci_if_error: true
+
   build-project:
     name: Build Project
     runs-on: ubuntu-latest
