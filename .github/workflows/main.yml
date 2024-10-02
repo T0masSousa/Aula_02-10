@@ -47,7 +47,7 @@ jobs:
         run: npm test
         working-directory: ./aula_02-10
 
-       - name: Upload coverage to Codecov
+      - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v2
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
