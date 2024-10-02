@@ -24,13 +24,10 @@ jobs:
         with:
           node-version: '18'
 
-       # Instalar todas as dependências e o Jest
+      # Instalar todas as dependências
       - name: Install dependencies
-        run: 
-          npm install
-          npm install --save-dev jest@latest jest-environment-jsdom@latest
+        run: npm install
         working-directory: ./aula_02-10
-
 
   run-tests:
     name: Run Tests
