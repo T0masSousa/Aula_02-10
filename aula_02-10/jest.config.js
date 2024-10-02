@@ -1,11 +1,13 @@
 /** @type {import('jest').Config} */
 const config = {
   verbose: true,
+  preset: 'ts-jest',
   testEnvironment: 'jest-environment-jsdom',
   testMatch: [
     "**/__tests__/**/*.[jt]s?(x)",
     "**/?(*.)+(spec|test).[tj]s?(x)"
   ],
+  collectCoverage: true,
   testPathIgnorePatterns: ["\\\\node_modules\\\\"],
   transform: {
     "^.+\\.[t|j]sx?$": "babel-jest"
