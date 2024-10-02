@@ -1,5 +1,5 @@
 # Nome da Pipeline
-name: TDW_Tomas_Sousa#1
+name: TDW_Tomas_Sousa#2
 
 # Quando a pipeline vai correr. Sempre que houver commit para qualquer branch (push) ou sempre que houver um pull request para qualquer branch
 on:
