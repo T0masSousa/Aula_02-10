@@ -22,11 +22,11 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '22'
+          node-version: '18'
 
        # Instalar todas as dependências e o Jest
       - name: Install dependencies
-        run: |
+        run: 
           npm install
           npm install --save-dev jest@latest jest-environment-jsdom@latest
         working-directory: ./aula_02-10
@@ -43,11 +43,11 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '22'
+          node-version: '18'
 
       # Correr todos os testes automáticos
       - name: Run tests
-        run: npx jest --config jest.config.js
+        run: npm test
         working-directory: ./aula_02-10
 
   build-project:
@@ -62,7 +62,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '22'
+          node-version: '18'
 
       # Fazer build do Projeto
       - name: Build project
