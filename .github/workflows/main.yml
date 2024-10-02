@@ -1,0 +1,44 @@
+# Nome da Pipeline
+name: TDW_Tomas_Sousa#1
+
+# Quando a pipeline vai correr. Sempre que houver commit para a main (push) ou sempre que houver um pull request para a main
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+# Quando a pipeline vai fazer a build
+jobs:
+  build:
+    # Onde a pipeline vai ser executada
+    runs-on: ubuntu-latest
+
+    steps:
+      # Vai buscar o código do workflow para trabalhar nele
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      # Versão do node a usar
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      # Instalar todas as dependências em falta
+      - name: Install dependencies
+        run: npm install
+        working-directory: ./aula_02-10  # Define o diretório de trabalho
+
+      # Correr todos os testes automáticos
+      - name: Run tests
+        run: npm test
+        working-directory: ./aula_02-10  # Define o diretório de trabalho
+
+      # Fazer a build do projeto (opcional)
+      - name: Build project
+        run: npm run build
+        if: success()  # Só corre a build se os testes passarem
+        working-directory: ./aula_02-10  # Define o diretório de trabalho
