@@ -44,7 +44,7 @@ jobs:
 
       # Correr todos os testes automáticos
       - name: Run tests
-        run: npm test
+        run: npm run test
         working-directory: ./aula_02-10
 
   build-project:
