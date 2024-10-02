@@ -30,6 +30,8 @@ export default function Home() {
               Get started by editing <code>src/pages/index.js</code>.
             </li>
             <li>Save and see your changes instantly.</li>
+            <p>AAAAAAA</p>
+
           </ol>
 
           <div >

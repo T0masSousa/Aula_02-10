@@ -1,10 +1,8 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react';
 import Home from '../pages/index';
 
-test('Render Index', () => {
-  const tree = renderer
-    .create(<Home />)
-    .toJSON();
-  expect(tree).toMatchSnapshot();
+test('renderiza corretamente', () => {
+  const { asFragment } = render(<Home />);
+  expect(asFragment()).toMatchSnapshot();
 });
