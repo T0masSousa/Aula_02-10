@@ -78,8 +78,3 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: '18'
-
-      # Fazer build do Projeto
-      - name: Build project
-        run: npx next build
-        working-directory: ./aula_02-10
