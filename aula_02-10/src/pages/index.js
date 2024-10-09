@@ -28,6 +28,7 @@ export default function Home() {
             <li>Save and see your changes instantly.</li>
             <p>AAAAAAA</p>
             <p>BBBBBBB</p>
+            <p>CCCCCCC</p>
           </ol>
 
           <div>
