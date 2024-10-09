@@ -105,6 +105,4 @@ jobs:
 
       # Executar o comando de deploy
       - name: Deploy to Netlify
-        run: npx netlify-cli deploy --site lighthearted-belekoy-190401.netlify.app --auth a6213553-864e-4a89-8888-e63ad0c93a7a --prod
-        env:
-          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}  # Adicionei uma variável de ambiente para o token
+        run: npx netlify-cli deploy --site ${{ secrets.NETLIFY_SITE_ID }} --auth ${{ secrets.NETLIFY_AUTH_TOKEN }} --prod
