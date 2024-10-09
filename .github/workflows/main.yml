@@ -84,10 +84,6 @@ jobs:
         run: npm install
         working-directory: ./aula_02-10
         
-        # Verificar o conteúdo da pasta após o build
-      - name: List contents of build directory
-        run: ls -la ./aula_02-10
-
       # Construir o projeto
       - name: Build Project
         run: npm run build
@@ -106,10 +102,7 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: '18'
-
-      - name: Verify .next directory
-        run: ls -la ./aula_02-10/.next
+          
       # Executar o comando de deploy
       - name: Deploy to Netlify
-        run: npx netlify-cli deploy --site ${{ secrets.NETLIFY_SITE_ID }} --auth ${{ secrets.NETLIFY_AUTH_TOKEN }} --dir ./aula_02-10/.next --prod
-        working-directory: ./aula_02-10
+        run: npx netlify-cli deploy --site ${{ secrets.NETLIFY_SITE_ID }} --auth ${{ secrets.NETLIFY_AUTH_TOKEN }} --prod
