@@ -26,12 +26,6 @@ export default function Home() {
               Get started by editing <code>src/pages/index.js</code>.
             </li>
             <li>Save and see your changes instantly.</li>
-            <p>AAAAAAA</p>
-            <p>BBBBBBB</p>
-            <p>CCCCCCC</p>
-            <p>DDDDDDD</p>
-            <p>EEEEEEE</p>
-            <p>FFFFFFF</p>
             <p>Netlify test#1</p>
             <p>Netlify Test#2</p>
             <p>Netlify Test#3</p>
@@ -40,6 +34,7 @@ export default function Home() {
             <p>Netlify Test #6</p>
             <p>Netlify Test #7</p>
             <p>Netlify Test #8</p>
+            <p>Netlify Test #9</p>
           </ol>
 
           <div>
