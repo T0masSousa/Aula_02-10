@@ -79,6 +79,11 @@ jobs:
         with:
           node-version: '18'
 
+      # Instalar as dependências novamente (para garantir que estão disponíveis)
+      - name: Install dependencies
+        run: npm install
+        working-directory: ./aula_02-10
+
       # Construir o projeto
       - name: Build Project
         run: npm run build
