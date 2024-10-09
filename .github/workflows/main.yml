@@ -83,6 +83,10 @@ jobs:
       - name: Install dependencies
         run: npm install
         working-directory: ./aula_02-10
+        
+        # Verificar o conteúdo da pasta após o build
+      - name: List contents of build directory
+        run: ls -la ./aula_02-10
 
       # Construir o projeto
       - name: Build Project
