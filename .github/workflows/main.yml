@@ -46,11 +46,6 @@ jobs:
         with:
           node-version: '18'
 
-      # Instalar Jest
-      - name: Install Jest
-        run: npm install jest
-        working-directory: ./aula_02-10
-
       # Correr todos os testes automáticos
       - name: Run tests
         run: npm test -- -u 
@@ -79,7 +74,7 @@ jobs:
         with:
           node-version: '18'
 
-      # Fazer build do Projeto
+      # Fazer build do Projeto Next.js
       - name: Build project
         run: npm run build
         working-directory: ./aula_02-10
