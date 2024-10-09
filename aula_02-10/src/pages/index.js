@@ -30,6 +30,7 @@ export default function Home() {
             <p>BBBBBBB</p>
             <p>CCCCCCC</p>
             <p>DDDDDDD</p>
+            <p>EEEEEEE</p>
           </ol>
 
           <div>
