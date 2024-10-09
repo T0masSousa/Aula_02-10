@@ -3,7 +3,6 @@ import Image from "next/image";
 //import styles from "@/styles/Home.module.css";
 import React from "react";
 
-
 export default function Home() {
   return (
     <>
@@ -14,9 +13,8 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div>
-        <main >
+        <main>
           <Image
-            
             src="https://nextjs.org/icons/next.svg"
             alt="Next.js logo"
             width={180}
@@ -29,10 +27,9 @@ export default function Home() {
             </li>
             <li>Save and see your changes instantly.</li>
             <p>AAAAAAA</p>
-
           </ol>
 
-          <div >
+          <div>
             <a
               href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
               target="_blank"
