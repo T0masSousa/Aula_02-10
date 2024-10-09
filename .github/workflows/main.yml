@@ -49,7 +49,7 @@ jobs:
 
       # Correr todos os testes automáticos
       - name: Run tests
-        run: npm test
+        run: npm test -- -u 
         working-directory: ./aula_02-10
 
       - name: Upload coverage to Codecov
