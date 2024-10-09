@@ -33,6 +33,7 @@ export default function Home() {
             <p>EEEEEEE</p>
             <p>FFFFFFF</p>
             <p>Netlify test#1</p>
+            <p>Netlify Test#2</p>
           </ol>
 
           <div>
