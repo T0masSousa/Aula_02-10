@@ -12,6 +12,7 @@
     "coverage": "jest --coverage"
   },
   "dependencies": {
+    "@netlify/plugin-nextjs": "^5.7.4",
     "@types/testing-library__react": "^10.2.0",
     "glob": "^11.0.0",
     "lru-cache": "^11.0.1",
