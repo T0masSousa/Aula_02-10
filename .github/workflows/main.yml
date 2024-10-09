@@ -81,5 +81,5 @@ jobs:
 
       # Fazer build do Projeto
       - name: Build project
-        run: npm run build
+        run: npx next build
         working-directory: ./aula_02-10
