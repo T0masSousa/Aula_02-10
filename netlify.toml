@@ -1,5 +1,4 @@
 [build]
-  base = "aula_02-10"
   publish = "out"
   command = "npm run build"
 
