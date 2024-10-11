@@ -15,12 +15,15 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
+
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
           node-version: '18'
+
       - name: Clear npm cache
         run: npm cache clean --force
+
       - name: Install dependencies
         run: npm install
         working-directory: ./aula_02-10
@@ -32,16 +35,20 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
+
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
           node-version: '18'
+
       - name: Install Jest
         run: npm install jest
         working-directory: ./aula_02-10
+
       - name: Run tests
         run: npm test -- -u 
         working-directory: ./aula_02-10
+
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v2
         with:
@@ -59,13 +66,16 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
+
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
           node-version: '18'
+
       - name: Install dependencies
         run: npm install
-        working-directory: ./aula_02-10     
+        working-directory: ./aula_02-10
+        
       - name: Build Project
         run: npm run build
         working-directory: ./aula_02-10
@@ -78,12 +88,15 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
+
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
           node-version: '18'
+          
       - name: Set Netlify Debug Mode
         run: echo "NETLIFY_BUILD_DEBUG=true" >> $GITHUB_ENV
+
       - name: Deploy to Netlify
-        run: npx netlify-cli deploy --site ${{ secrets.NETLIFY_SITE_ID }} --auth ${{ secrets.NETLIFY_AUTH_TOKEN }} --dir ./out --prod
+        run: npx netlify-cli deploy --site ${{ secrets.NETLIFY_SITE_ID }} --auth ${{ secrets.NETLIFY_AUTH_TOKEN }} --dir ./aula_02-10/out --prod
         working-directory: ./aula_02-10
