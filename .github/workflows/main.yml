@@ -107,4 +107,4 @@ jobs:
 
       - name: Deploy to Netlify
         run: npx netlify-cli deploy --site ${{ secrets.NETLIFY_SITE_ID }} --auth ${{ secrets.NETLIFY_AUTH_TOKEN }} --prod
-        working-directory: ./aula_02-10
+        working-directory: ./aula_02-10/out
