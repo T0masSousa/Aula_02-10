@@ -1,15 +1,2 @@
 [build]
-  publish = "out"
-  command = "npm run build"
-
-[context.production.environment]
-  NODE_ENV = "production"
-
-[context.deploy-preview]
-  command = "npm run build-preview"
-  publish = "aula_02-10/out-preview"
-
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
+publish = "./out"
