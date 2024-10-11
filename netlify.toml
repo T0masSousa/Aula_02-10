@@ -1,6 +1,6 @@
 [build]
   base = "aula_02-10"
-  publish = "aula_02-10/out"
+  publish = "out"
   command = "npm run build"
 
 [context.production.environment]
