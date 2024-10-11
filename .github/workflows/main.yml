@@ -1,7 +1,5 @@
-# Nome da Pipeline
 name: TDW_Tomas_Sousa#2
 
-# Quando a pipeline vai correr. Sempre que houver commit para qualquer branch (push) ou sempre que houver um pull request para qualquer branch
 on:
   push:
     branches:
@@ -10,7 +8,6 @@ on:
     branches:
       - '**'
 
-# Definição dos jobs que vão correr em paralelo
 jobs:
   install-dependencies:
     name: Install Dependencies
@@ -24,11 +21,9 @@ jobs:
         with:
           node-version: '18'
 
-      # Limpar a cache (opcional)
       - name: Clear npm cache
         run: npm cache clean --force
 
-      # Instalar todas as dependências
       - name: Install dependencies
         run: npm install
         working-directory: ./aula_02-10
@@ -36,7 +31,7 @@ jobs:
   run-tests:
     name: Run Tests
     runs-on: ubuntu-latest
-    needs: install-dependencies  # Isto depende de install-dependencies
+    needs: install-dependencies
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
@@ -46,17 +41,14 @@ jobs:
         with:
           node-version: '18'
 
-      # Instalar Jest
       - name: Install Jest
         run: npm install jest
         working-directory: ./aula_02-10
 
-      # Correr todos os testes automáticos
       - name: Run tests
         run: npm test -- -u 
         working-directory: ./aula_02-10
 
-      # Mandar o valor do Badge para o Codecov  
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v2
         with:
@@ -69,8 +61,8 @@ jobs:
   build-project:
     name: Build Project
     runs-on: ubuntu-latest
-    needs: run-tests  # Isto depende da passagem dos testes
-    if: github.ref == 'refs/heads/master' || github.ref == 'refs/heads/main'  # Só vai se na branch master ou main
+    needs: run-tests
+    if: github.ref == 'refs/heads/master' || github.ref == 'refs/heads/main'
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
@@ -80,21 +72,27 @@ jobs:
         with:
           node-version: '18'
 
-      # Instalar as dependências novamente (para garantir que estão disponíveis)
       - name: Install dependencies
         run: npm install
         working-directory: ./aula_02-10
         
-      # Construir o projeto
       - name: Build Project
         run: npm run build
+        working-directory: ./aula_02-10
+
+      - name: Create output directory
+        run: mkdir -p ./aula_02-10/out
+        working-directory: ./aula_02-10
+
+      - name: List files in build directory
+        run: ls -la ./aula_02-10/out
         working-directory: ./aula_02-10
 
   deploy:
     name: Deploy to Netlify
     runs-on: ubuntu-latest
-    needs: build-project  # Isto depende da passagem do build
-    if: github.ref == 'refs/heads/master' || github.ref == 'refs/heads/main'  # Só vai se na branch master ou main
+    needs: build-project
+    if: github.ref == 'refs/heads/master' || github.ref == 'refs/heads/main'
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
@@ -104,6 +102,9 @@ jobs:
         with:
           node-version: '18'
           
-      # Executar o comando de deploy
+      - name: Set Netlify Debug Mode
+        run: echo "NETLIFY_BUILD_DEBUG=true" >> $GITHUB_ENV
+
       - name: Deploy to Netlify
-        run: npx netlify-cli deploy --site ${{ secrets.NETLIFY_SITE_ID }} --auth ${{ secrets.NETLIFY_AUTH_TOKEN }} --prod
+        run: npx netlify-cli deploy --site ${{ secrets.NETLIFY_SITE_ID }} --auth ${{ secrets.NETLIFY_AUTH_TOKEN }} --dir ./aula_02-10/out --prod
+        working-directory: ./aula_02-10
