@@ -84,6 +84,11 @@ jobs:
         run: npm install
         working-directory: ./aula_02-10
         
+      # Linkar o projeto ao site no Netlify
+      - name: Link Netlify Site
+        run: npx netlify link --id ${{ secrets.NETLIFY_SITE_ID }}
+        working-directory: ./aula_02-10
+        
       # Construir o projeto
       - name: Build Project
         run: npm run build
@@ -103,6 +108,6 @@ jobs:
         with:
           node-version: '18'
           
-      # Executar o comando de deploy
+      # Executar o comando de deploy especificando o diretório de publicação
       - name: Deploy to Netlify
-        run: npx netlify-cli deploy --site ${{ secrets.NETLIFY_SITE_ID }} --auth ${{ secrets.NETLIFY_AUTH_TOKEN }} --prod
+        run: npx netlify-cli deploy --site ${{ secrets.NETLIFY_SITE_ID }} --auth ${{ secrets.NETLIFY_AUTH_TOKEN }} --prod --dir out
