@@ -89,6 +89,11 @@ jobs:
         run: npm run build
         working-directory: ./aula_02-10
 
+      # Comando de Build do Netlify
+      - name: Netlify Build
+        run: npx netlify build
+        working-directory: ./aula_02-10
+
   deploy:
     name: Deploy to Netlify
     runs-on: ubuntu-latest
