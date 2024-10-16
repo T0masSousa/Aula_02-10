@@ -52,6 +52,7 @@ export default function Home() {
             <p>Netlify Test #24</p>
             <p>Netlify Test #25</p>
             <p>Netlify Test #26</p>
+            <p>Netlify Test #27</p>
           </ol>
 
           <div>
