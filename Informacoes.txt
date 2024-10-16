@@ -1,0 +1,15 @@
+VER DIR DA PIPELINE MAL INDICADO TIRA O DIR
+lighthearted-belekoy-190401.netlify.app
+
+a6213553-864e-4a89-8888-e63ad0c93a7a
+
+npx netlify-cli deploy --site a6213553-864e-4a89-8888-e63ad0c93a7a --auth  nfp_D153zE81PXBmP2LjLNgsUDjWiTGmsNWc1449 --prod 
+
+
+
+Token -> nfp_D153zE81PXBmP2LjLNgsUDjWiTGmsNWc1449
+
+
+http://tomassousa.tdw-mctw.dev/
+
+https://lighthearted-belekoy-190401.netlify.app
