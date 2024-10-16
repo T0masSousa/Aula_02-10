@@ -22,7 +22,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '18'
+          node-version: '22'
 
       # Limpar a cache (opcional)
       - name: Clear npm cache
@@ -31,7 +31,7 @@ jobs:
       # Instalar todas as dependências
       - name: Install dependencies
         run: npm install
-        working-directory: ./aula_02-10
+        working-directory: aula_02-10
 
   run-tests:
     name: Run Tests
@@ -44,17 +44,17 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '18'
+          node-version: '22'
 
       # Instalar Jest
       - name: Install Jest
         run: npm install jest
-        working-directory: ./aula_02-10
+        working-directory: aula_02-10
 
       # Correr todos os testes automáticos
       - name: Run tests
         run: npm test -- -u 
-        working-directory: ./aula_02-10
+        working-directory: aula_02-10
 
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v2
@@ -77,22 +77,22 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '18'
+          node-version: '22'
 
       # Instalar as dependências novamente (para garantir que estão disponíveis)
       - name: Install dependencies
         run: npm install
-        working-directory: ./aula_02-10
+        working-directory: aula_02-10
         
       # Linkar o projeto ao site no Netlify
       - name: Link Netlify Site
         run: npx netlify link --id ${{ secrets.NETLIFY_SITE_ID }}
-        working-directory: ./aula_02-10
+        working-directory: aula_02-10
         
       # Construir o projeto
       - name: Build Project
         run: npm run build
-        working-directory: ./aula_02-10
+        working-directory: aula_02-10
 
   deploy:
     name: Deploy to Netlify
@@ -106,7 +106,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '18'
+          node-version: '22'
           
       # Executar o comando de deploy especificando o diretório de publicação
       - name: Deploy to Netlify
