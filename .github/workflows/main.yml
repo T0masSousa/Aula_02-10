@@ -84,19 +84,14 @@ jobs:
         run: npm install
         working-directory: ./aula_02-10
         
-      # Construir o projeto
-      - name: Build Project
-        run: npm run build
-        working-directory: ./aula_02-10
-
-       # Linkar o projeto ao site no Netlify
+      # Linkar o projeto ao site no Netlify
       - name: Link Netlify Site
         run: npx netlify link --id ${{ secrets.NETLIFY_SITE_ID }}
         working-directory: ./aula_02-10
         
-      # Executar o comando de build do Netlify
-      - name: Netlify Build
-        run: npx netlify build
+      # Construir o projeto
+      - name: Build Project
+        run: npm run build
         working-directory: ./aula_02-10
 
   deploy:
