@@ -6,7 +6,7 @@ const nextConfig = {
     unoptimized: true,
   },
   output: 'export',
-  basePath: '/',
+  basePath: '',
   //distDir: 'dist',
   //trailingSlash: false,
   //skipTrailingSlashRedirect: true,
