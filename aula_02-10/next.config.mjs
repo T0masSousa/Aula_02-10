@@ -1,18 +1,15 @@
 /** @type {import('next').NextConfig} */
-
 const nextConfig = {
-
-  future: {
-    webpack5: true,
-  },
   reactStrictMode: true,
+ 
   images: {
     unoptimized: true,
   },
-  
-  output: "export",
+  output: 'export',
+  basePath: '',
+  //distDir: 'dist',
+  //trailingSlash: false,
+  //skipTrailingSlashRedirect: true,
 };
-
-export default nextConfig;
-
-
+ 
+export default nextConfig;
