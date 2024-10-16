@@ -6,7 +6,7 @@ const nextConfig = {
     unoptimized: true,
   },
   output: 'export',
-  basePath: '/',
+  basePath: '/aula_02-10',
   //distDir: 'dist',
   //trailingSlash: false,
   //skipTrailingSlashRedirect: true,
